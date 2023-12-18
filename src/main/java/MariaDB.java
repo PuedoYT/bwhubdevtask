@@ -11,9 +11,13 @@ public class MariaDB {
     public Connection connection;
 
     @Getter @Setter
-    public String databaseName;
+    public String databaseLink, databaseName, username, password;
+
+    @Setter
+    public int databasePort;
+
     public void connect() throws ClassNotFoundException, SQLException {
         Class.forName("org.mariadb.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mariadb://192.168.100.174/" + databaseName, "root", "ROOT");
+        connection = DriverManager.getConnection(databaseLink + "/" + databasePort + "/" + databaseName, username, password);
     }
 }
