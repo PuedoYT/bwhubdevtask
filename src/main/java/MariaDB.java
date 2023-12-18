@@ -18,6 +18,6 @@ public class MariaDB {
 
     public void connect() throws ClassNotFoundException, SQLException {
         Class.forName("org.mariadb.jdbc.Driver");
-        connection = DriverManager.getConnection(databaseLink + "/" + databasePort + "/" + databaseName, username, password);
+        connection = DriverManager.getConnection(databaseLink + ":" + databasePort + "/" + databaseName, username, password);
     }
 }
