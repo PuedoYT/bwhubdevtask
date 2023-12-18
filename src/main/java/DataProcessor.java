@@ -7,7 +7,7 @@ public class DataProcessor {
         List<String> result = new ArrayList<>();
         if(string != null) {
             for(String s : string) {
-                result.add(s);
+                result.add(s.toUpperCase());
             }
         }
         return result;
